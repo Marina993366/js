@@ -49,10 +49,7 @@ class Anotador{
         for (let i=0; i<this.#notas.length; i++){
             resultado += `${i+1}. ${this.#notas[i]}\n`;
         }
-        return `
-Cosas para hacer
------------------------- 
-${resultado}`;
+        return `Cosas para hacer\n ------------------------\n ${resultado}`;
     }
 }
 

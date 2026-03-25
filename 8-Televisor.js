@@ -98,11 +98,7 @@ class Televisor{
         }
     } 
     toString(){
-        return `
-        Televisor ${this.marca} 
-        - Canales: ${this.canales} 
-        - Canal actual:  ${this.#canal} 
-        - Volumen actual: ${this.#volumen}`;
+        return `Televisor ${this.marca}\n - Canales: ${this.canales}\n - Canal actual:  ${this.#canal}\n - Volumen actual: ${this.#volumen}`;
     }
 }
 
