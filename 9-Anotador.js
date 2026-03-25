@@ -22,3 +22,48 @@ Cosas para hacer
 3. Programar
 4. Leer libro
 */
+
+class Anotador{
+    #notas;
+    constructor(titulo){
+        this.#notas = [];
+        this.titulo = titulo;
+    }
+    agregarNota(nota) {
+        this.#notas.push(nota);
+    }
+    actualizarNota(id, nota){
+        this.#notas[(id-1)] = nota;
+    } 
+    obtenerNota(id){
+        return this.#notas[(id-1)];
+    }
+    eliminarNota(id){
+        this.#notas.splice((id-1), 1);
+    } 
+    eliminarNotas(){
+        this.#notas =[];
+    }
+    listarNotas(){
+        let resultado = "";
+        for (let i=0; i<this.#notas.length; i++){
+            resultado += `${i+1}. ${this.#notas[i]}\n`;
+        }
+        return `
+Cosas para hacer
+------------------------ 
+${resultado}`;
+    }
+}
+
+const anotador = new Anotador;
+anotador.agregarNota("Desayunar");
+anotador.agregarNota("Comprar tomates");
+anotador.agregarNota("Comprar uvas");
+anotador.agregarNota("Comprar bananas");
+console.log(anotador.listarNotas());
+anotador.actualizarNota(3, "Comprar papel");
+console.log(anotador.listarNotas());
+console.log(anotador.obtenerNota(2));
+anotador.eliminarNota(1);
+console.log(anotador.listarNotas());
